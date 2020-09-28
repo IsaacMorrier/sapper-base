@@ -7,6 +7,8 @@ import { terser } from 'rollup-plugin-terser';
 import sveltePreprocess from 'svelte-preprocess';
 import typescript from '@rollup/plugin-typescript';import config from 'sapper/config/rollup.js';
 import pkg from './package.json';
+import { mdsvex } from 'mdsvex';
+
 
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
@@ -18,6 +20,16 @@ const onwarn = (warning, onwarn) =>
 	(warning.code === 'THIS_IS_UNDEFINED') ||
 	onwarn(warning);
 
+const p  = [
+	sveltePreprocess(),
+	mdsvex()
+];
+
+const ext = [
+	'.svelte',
+	'.svx'
+];
+
 export default {
 	client: {
 		input: config.client.input().replace(/.js$/, '.ts'),
@@ -28,9 +40,10 @@ export default {
 				'process.env.NODE_ENV': JSON.stringify(mode)
 			}),
 			svelte({
+				extensions: ext,
 				dev,
 				hydratable: true,
-				preprocess: sveltePreprocess(),
+				preprocess: p,
 				emitCss: true
 			}),
 			resolve({
@@ -41,7 +54,7 @@ export default {
 			typescript({ sourceMap: dev }),
 
 			legacy && babel({
-				extensions: ['.js', '.mjs', '.html', '.svelte'],
+				extensions: ['.js', '.mjs', '.html', ...ext],
 				babelHelpers: 'runtime',
 				exclude: ['node_modules/@babel/**'],
 				presets: [
@@ -75,9 +88,10 @@ export default {
 				'process.env.NODE_ENV': JSON.stringify(mode)
 			}),
 			svelte({
+				extensions: ext,
 				generate: 'ssr',
 				hydratable: true,
-				preprocess: sveltePreprocess(),
+				preprocess: p,
 				dev
 			}),
 			resolve({
