@@ -21,7 +21,11 @@ const onwarn = (warning, onwarn) =>
 	onwarn(warning);
 
 const p  = [
-	sveltePreprocess(),
+	sveltePreprocess({
+		postcss: {
+			plugins: [require('autoprefixer')()]
+		}
+	}),
 	mdsvex()
 ];
 
