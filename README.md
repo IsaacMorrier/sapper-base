@@ -1,27 +1,12 @@
-# sapper-template
+# Sapper Base
 
-The default [Sapper](https://github.com/sveltejs/sapper) template, available for Rollup and webpack.
+Based on the default [Sapper](https://github.com/sveltejs/sapper) template with rollup, plus
+- [Typescript](https://github.com/sveltejs/sapper-template/blob/master/scripts/setupTypeScriptRollup.js)
+- [svelte-preprocess](https://github.com/sveltejs/svelte-preprocess/blob/HEAD/docs/getting-started.md), with postcss, autoprefixer, and scss
+- [mdsvex](https://mdsvex.com/docs)
 
 
 ## Getting started
-
-
-### Using `degit`
-
-[`degit`](https://github.com/Rich-Harris/degit) is a scaffolding tool that lets you create a directory from a branch in a repository. Use either the `rollup` or `webpack` branch in `sapper-template`:
-
-```bash
-# for Rollup
-npx degit "sveltejs/sapper-template#rollup" my-app
-# for webpack
-npx degit "sveltejs/sapper-template#webpack" my-app
-```
-
-
-### Using GitHub templates
-
-Alternatively, you can use GitHub's template feature with the [sapper-template-rollup](https://github.com/sveltejs/sapper-template-rollup) or [sapper-template-webpack](https://github.com/sveltejs/sapper-template-webpack) repositories.
-
 
 ### Running the project
 
@@ -29,7 +14,7 @@ However you get the code, you can install dependencies and run the project in de
 
 ```bash
 cd my-app
-npm install # or yarn
+yarn
 npm run dev
 ```
 

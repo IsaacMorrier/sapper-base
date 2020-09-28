@@ -22,6 +22,9 @@ const onwarn = (warning, onwarn) =>
 
 const p  = [
 	sveltePreprocess({
+		scss: {
+			prependData: `@import 'src/styles/variables.scss';`
+		},
 		postcss: {
 			plugins: [require('autoprefixer')()]
 		}

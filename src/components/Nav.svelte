@@ -2,9 +2,9 @@
 	export let segment: string;
 </script>
 
-<style>
+<style lang="scss">
 	nav {
-		border-bottom: 1px solid rgba(255,62,0,0.1);
+		border-bottom: 1px solid $text-color;
 		font-weight: 300;
 		padding: 0 1em;
 	}
@@ -36,7 +36,7 @@
 		content: '';
 		width: calc(100% - 1em);
 		height: 2px;
-		background-color: rgb(255,62,0);
+		background-color: $text-color;
 		display: block;
 		bottom: -1px;
 	}
