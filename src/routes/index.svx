@@ -1,3 +1,7 @@
+<script lang="ts">
+	import Image from 'svelte-image';
+</script>
+
 <style lang="scss">
 
 </style>
@@ -7,3 +11,13 @@
 </svelte:head>
 
 # Home
+
+<Image src="img/Virginia_Beach-2019_09_01-3226.jpg"></Image>
+<Image src="img/Virginia_Beach-2019_09_01-3232.jpg"></Image>
+<Image src="img/Virginia_Beach-2019_09_01-3249.jpg"></Image>
+<Image src="img/Virginia_Beach-2019_09_01-3250.jpg"></Image>
+<Image src="img/Virginia_Beach-2019_09_01-3253.jpg"></Image>
+<Image src="img/Virginia_Beach-2019_09_01-3254.jpg"></Image>
+<Image src="img/Virginia_Beach-2019_09_01-3261.jpg"></Image>
+<Image src="img/Virginia_Beach-2019_09_01-3316.jpg"></Image>
+<Image src="img/Virginia_Beach-2019_09_01-3354.jpg"></Image>

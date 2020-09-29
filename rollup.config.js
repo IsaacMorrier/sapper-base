@@ -8,6 +8,7 @@ import sveltePreprocess from 'svelte-preprocess';
 import typescript from '@rollup/plugin-typescript';import config from 'sapper/config/rollup.js';
 import pkg from './package.json';
 import { mdsvex } from 'mdsvex';
+import image from 'svelte-image';
 
 
 const mode = process.env.NODE_ENV;
@@ -27,7 +28,10 @@ const p  = [
 		},
 		postcss: {
 			plugins: [require('autoprefixer')()]
-		}
+		},
+		...image({
+			placeholder: 'blur'
+		})
 	}),
 	mdsvex()
 ];

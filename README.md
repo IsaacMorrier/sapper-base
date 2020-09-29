@@ -4,6 +4,7 @@ Based on the default [Sapper](https://github.com/sveltejs/sapper) template with 
 - [Typescript](https://github.com/sveltejs/sapper-template/blob/master/scripts/setupTypeScriptRollup.js)
 - [svelte-preprocess](https://github.com/sveltejs/svelte-preprocess/blob/HEAD/docs/getting-started.md), with postcss, autoprefixer, and scss
 - [mdsvex](https://mdsvex.com/docs)
+- [svelte-image](https://github.com/matyunya/svelte-image)
 
 
 ## Getting started
