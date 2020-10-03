@@ -4,7 +4,8 @@ import commonjs from '@rollup/plugin-commonjs';
 import svelte from 'rollup-plugin-svelte';
 import babel from '@rollup/plugin-babel';
 import { terser } from 'rollup-plugin-terser';
-import sveltePreprocess from 'svelte-preprocess';
+import seqPreprocessor from 'svelte-sequential-preprocessor';
+import autoPreprocess from 'svelte-preprocess';
 import typescript from '@rollup/plugin-typescript';import config from 'sapper/config/rollup.js';
 import pkg from './package.json';
 import { mdsvex } from 'mdsvex';
@@ -21,20 +22,26 @@ const onwarn = (warning, onwarn) =>
 	(warning.code === 'THIS_IS_UNDEFINED') ||
 	onwarn(warning);
 
-const p  = [
-	sveltePreprocess({
+const preprocess  = seqPreprocessor([
+	autoPreprocess({
 		scss: {
 			prependData: `@import 'src/styles/variables.scss';`
 		},
 		postcss: {
 			plugins: [require('autoprefixer')()]
-		},
-		...image({
-			placeholder: 'blur'
-		})
+		}
 	}),
-	mdsvex()
-];
+	mdsvex(),
+	image({
+		sizes: [400, 800, 1200],
+		breakpoints: [375, 768, 1024],
+		trace: {
+			background: "#f3ecdb",
+			color: "#414535",
+			threshold: 120
+		  } 
+	})
+]);
 
 const ext = [
 	'.svelte',
@@ -54,7 +61,7 @@ export default {
 				extensions: ext,
 				dev,
 				hydratable: true,
-				preprocess: p,
+				preprocess,
 				emitCss: true
 			}),
 			resolve({
@@ -102,7 +109,7 @@ export default {
 				extensions: ext,
 				generate: 'ssr',
 				hydratable: true,
-				preprocess: p,
+				preprocess,
 				dev
 			}),
 			resolve({
