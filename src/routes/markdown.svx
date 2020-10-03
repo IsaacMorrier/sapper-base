@@ -1,3 +1,8 @@
+<script lang="ts">
+  import MainWrapper from '../components/MainWrapper.svelte';
+</script>
+
+<MainWrapper>
 
 # h1 Heading
 ## h2 Heading
@@ -89,3 +94,6 @@ Right aligned columns
 ## Images
 
 ![Virginia Beach, VA](img/Virginia_Beach-2019_09_01-3226.jpg)
+
+
+</MainWrapper>

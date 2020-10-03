@@ -10,6 +10,6 @@
 
 <Nav {segment}/>
 
-<main>
+<main transition:fade>
 	<slot></slot>
 </main>
