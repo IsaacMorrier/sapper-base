@@ -1,4 +1,5 @@
 <script lang="ts">
+	import PageTransition from "../components/PageTransition.svelte";
 	export let status: number;
 	export let error: Error;
 
@@ -31,10 +32,12 @@
 	<title>{status}</title>
 </svelte:head>
 
-<h1>{status}</h1>
+<PageTransition>
+	<h1>{status}</h1>
 
-<p>{error.message}</p>
+	<p>{error.message}</p>
 
-{#if dev && error.stack}
-	<pre>{error.stack}</pre>
-{/if}
+	{#if dev && error.stack}
+		<pre>{error.stack}</pre>
+	{/if}
+</PageTransition>

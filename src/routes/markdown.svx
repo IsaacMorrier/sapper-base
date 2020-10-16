@@ -1,8 +1,8 @@
 <script lang="ts">
-  import MainWrapper from '../components/MainWrapper.svelte';
+  import PageTransition from '../components/PageTransition.svelte';
 </script>
 
-<MainWrapper>
+<PageTransition>
 
 # h1 Heading
 ## h2 Heading
@@ -96,4 +96,4 @@ Right aligned columns
 ![Virginia Beach, VA](img/Virginia_Beach-2019_09_01-3226.jpg)
 
 
-</MainWrapper>
+</PageTransition>

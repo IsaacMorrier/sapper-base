@@ -7,7 +7,7 @@
 </script>
 
 <script lang="ts">
-	import MainWrapper from '../../components/MainWrapper.svelte';
+	import PageTransition from '../../components/PageTransition.svelte';
 	export let posts: { slug: string; title: string, html: any }[];
 </script>
 
@@ -22,7 +22,7 @@
 	<title>Blog</title>
 </svelte:head>
 
-<MainWrapper>
+<PageTransition>
 	<h1>Recent posts</h1>
 
 	<ul>
@@ -34,4 +34,4 @@
 			<li><a rel="prefetch" href="blog/{post.slug}">{post.title}</a></li>
 		{/each}
 	</ul>
-</MainWrapper>
+</PageTransition>

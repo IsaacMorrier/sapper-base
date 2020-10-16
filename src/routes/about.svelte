@@ -1,13 +1,13 @@
 <script lang="ts">
-	import MainWrapper from '../components/MainWrapper.svelte';
+	import PageTransition from '../components/PageTransition.svelte';
 </script>
 
 <svelte:head>
 	<title>About</title>
 </svelte:head>
 
-<MainWrapper>
+<PageTransition>
 	<h1>About this site</h1>
 
 	<p>This is the 'about' page. There's not much here.</p>
-</MainWrapper>
+</PageTransition>

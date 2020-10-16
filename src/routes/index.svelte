@@ -1,5 +1,5 @@
 <script lang="ts">
-	import MainWrapper from '../components/MainWrapper.svelte';
+	import PageTransition from '../components/PageTransition.svelte';
 	import Image from 'svelte-image';
 </script>
 
@@ -11,7 +11,7 @@
 	<title>Sapper Template</title>
 </svelte:head>
 
-<MainWrapper>
+<PageTransition>
 
 	<h1>Home</h1>
 
@@ -25,4 +25,4 @@
 	<Image src="img/Virginia_Beach-2019_09_01-3316.jpg" />
 	<Image src="img/Virginia_Beach-2019_09_01-3354.jpg" />
 
-</MainWrapper>
+</PageTransition>

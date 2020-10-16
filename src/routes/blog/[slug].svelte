@@ -14,7 +14,7 @@
 </script>
 
 <script lang="ts">
-	import MainWrapper from '../../components/MainWrapper.svelte';
+	import PageTransition from '../../components/PageTransition.svelte';
 	export let post: { slug: string; title: string, html: any };
 </script>
 
@@ -58,10 +58,10 @@
 	<title>{post.title}</title>
 </svelte:head>
 
-<MainWrapper>
+<PageTransition>
 	<h1>{post.title}</h1>
 
 	<div class="content">
 		{@html post.html}
 	</div>
-</MainWrapper>
+</PageTransition>
