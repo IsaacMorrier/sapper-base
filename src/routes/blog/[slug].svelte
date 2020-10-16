@@ -58,10 +58,12 @@
 	<title>{post.title}</title>
 </svelte:head>
 
-<PageTransition>
-	<h1>{post.title}</h1>
+{#each [post] as c (c.slug)}
+	<PageTransition>
+		<h1>{c.title}</h1>
 
-	<div class="content">
-		{@html post.html}
-	</div>
-</PageTransition>
+		<div class="content">
+			{@html c.html}
+		</div>
+	</PageTransition>
+{/each}
