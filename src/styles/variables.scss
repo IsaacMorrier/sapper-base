@@ -1,4 +1,44 @@
-$primary-color:#96BBBB;
-$secondary-color: #C19875;
-$text-color: #414535;
-$background-color: #F2E3BC;
+@function rem-calc($n) {
+    $n: $n * .0625rem;
+    @return $n;
+}
+
+@function vw-calc($n) {
+    $n: $n * .267vw;
+    @return $n;
+}
+
+@function vw-calc-lg($n) {
+    $n: $n * .07vw;
+    @return $n;
+}
+
+$primary-color:#000000;
+$secondary-color: #00FF83;
+$text-color: #000000;
+$light-gray: #FCFAFA;
+$medium-light-gray: #CBCBCB;
+$medium-gray: #808080;
+$background-color: #FFFFFF;
+
+$global-margin: vw-calc(15);
+$global-margin-lg: vw-calc-lg(40);
+$global-gutter: vw-calc(30);
+$global-gutter-lg: vw-calc-lg(40);
+
+$breakpoint-md: 37.5;
+$breakpoint-lg: 48;
+$breakpoint-xl: 120;
+$cols: 12;
+
+@mixin breakpoint($point) {
+    @if $point == md {
+      @media (min-width: $breakpoint-md * 1rem) { @content ; }
+   }
+    @if $point == lg {
+      @media (min-width: $breakpoint-lg * 1rem) { @content ; }
+   }
+    @else if $point == xl {
+      @media (min-width: $breakpoint-xl * 1rem) { @content ; }
+   }
+ }
